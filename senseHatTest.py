@@ -2,7 +2,7 @@ from sense_hat import SenseHat
 from time import sleep
 
 sense = SenseHat()
-sense.clear()
+# sense.clear()
 
 #Basic Color Definitions
 # blue = (0, 0, 255)
@@ -73,34 +73,34 @@ sense.set_pixels(smile_pixels)
 
 #Enviornment sensor readings
 #-----------------------------------------------
-pressure = sense.get_pressure()
-temp = sense.get_temperature()
-humid = sense.get_humidity()
-
-print "\nPressure: {0:.2f} Millibars\n".format(pressure)
-print "Temperature: {0:.2f} Celsius\n".format(temp)
-print "Humidity: {0:.2f}%\n".format(humid)
+# pressure = sense.get_pressure()
+# temp = sense.get_temperature()
+# humid = sense.get_humidity()
+#
+# print "\nPressure: {0:.2f} Millibars\n".format(pressure)
+# print "Temperature: {0:.2f} Celsius\n".format(temp)
+# print "Humidity: {0:.2f}%\n".format(humid)
 
 #-----------------------------------------------
 
 #Create Scrolling text display of Enviornmental sensors
 #-----------------------------------------------
-# while True:
-#
-#   # Take readings from all three sensors
-#   t = sense.get_temperature()
-#   p = sense.get_pressure()
-#   h = sense.get_humidity()
-#
-#   # Round the values to one decimal place
-#   t = round(t, 1)
-#   p = round(p, 1)
-#   h = round(h, 1)
-#
-#   # Create the message
-#   # str() converts the value to a string so it can be concatenated
-#   message = "Temperature: " + str(t) + " Pressure: " + str(p) + " Humidity: " + str(h)
-#
-#   # Display the scrolling message
-#   sense.show_message(message, scroll_speed=0.05)
+while True:
+
+  # Take readings from all three sensors
+  t = sense.get_temperature()
+  p = sense.get_pressure()
+  h = sense.get_humidity()
+
+  # Round the values to one decimal place
+  t = round(t, 1)
+  p = round(p, 1)
+  h = round(h, 1)
+
+  # Create the message
+  # str() converts the value to a string so it can be concatenated
+  message = "Temperature: " + str(t) + " Pressure: " + str(p) + " Humidity: " + str(h)
+
+  # Display the scrolling message
+  sense.show_message(message, scroll_speed=0.05)
   #-----------------------------------------------
