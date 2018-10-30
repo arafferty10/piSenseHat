@@ -85,22 +85,37 @@ sense.set_pixels(smile_pixels)
 
 #Create Scrolling text display of Enviornmental sensors
 #-----------------------------------------------
+# while True:
+#
+#   # Take readings from all three sensors
+#   t = sense.get_temperature()
+#   p = sense.get_pressure()
+#   h = sense.get_humidity()
+#
+#   # Round the values to one decimal place
+#   t = round(t, 1)
+#   p = round(p, 1)
+#   h = round(h, 1)
+#
+#   # Create the message
+#   # str() converts the value to a string so it can be concatenated
+#   message = "Temperature: " + str(t) + " C...  " + " Pressure: " + str(p) + " mB...  " + " Humidity: " + str(h) + "%"
+#
+#   # Display the scrolling message
+#   sense.show_message(message, scroll_speed=0.05)
+#-----------------------------------------------
+
+#Accelerometer data
+#-----------------------------------------------
 while True:
+	acceleration = sense.get_accelerometer_raw()
+	x = acceleration['x']
+	y = acceleration['y']
+	z = acceleration['z']
 
-  # Take readings from all three sensors
-  t = sense.get_temperature()
-  p = sense.get_pressure()
-  h = sense.get_humidity()
+	x=round(x, 0)
+	y=round(y, 0)
+	z=round(z, 0)
 
-  # Round the values to one decimal place
-  t = round(t, 1)
-  p = round(p, 1)
-  h = round(h, 1)
-
-  # Create the message
-  # str() converts the value to a string so it can be concatenated
-  message = "Temperature: " + str(t) + "C...  " + " Pressure: " + str(p) + "mB...  " + " Humidity: " + str(h) + "%"
-
-  # Display the scrolling message
-  sense.show_message(message, scroll_speed=0.05)
-  #-----------------------------------------------
+	print("x={0}, y={1}, z={2}".format(x, y, z))
+#-----------------------------------------------
