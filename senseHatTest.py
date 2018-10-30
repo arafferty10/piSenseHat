@@ -99,7 +99,7 @@ while True:
 
   # Create the message
   # str() converts the value to a string so it can be concatenated
-  message = "Temperature: " + str(t) + " Pressure: " + str(p) + " Humidity: " + str(h)
+  message = "Temperature: " + str(t) + "C...  " + " Pressure: " + str(p) + "mB...  " + " Humidity: " + str(h) + "%"
 
   # Display the scrolling message
   sense.show_message(message, scroll_speed=0.05)
