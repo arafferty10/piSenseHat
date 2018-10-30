@@ -73,7 +73,7 @@ sense.set_pixels(smile_pixels)
 
 #Enviornment sensor readings
 #-----------------------------------------------
-pressue = sense.get_pressure()
+pressure = sense.get_pressure()
 temp = sense.get_temperature()
 humid = sense.get_humidity()
 
